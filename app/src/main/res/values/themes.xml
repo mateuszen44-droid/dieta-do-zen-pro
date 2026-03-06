@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.DietaDoZenPro" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#1D7D46</item>
+        <item name="colorPrimaryVariant">#0E4F2A</item>
+        <item name="colorSecondary">#8FE3A8</item>
+    </style>
+</resources>

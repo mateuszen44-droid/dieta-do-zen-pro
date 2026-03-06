@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dieta do Zen PRO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="header">
+      <div>
+        <p class="eyebrow">Dieta do Zen</p>
+        <h1>PRO</h1>
+      </div>
+      <div class="avatar">DZ</div>
+    </header>
+
+    <main class="content">
+      <section class="hero">
+        <div class="hero-top">
+          <div>
+            <p class="muted">Calorias consumidas</p>
+            <h2 id="totalCalories">0</h2>
+            <span class="small">kcal hoje</span>
+          </div>
+          <div class="ring-card">
+            <div class="ring" id="ringValue">0%</div>
+          </div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="hero-bottom">
+          <div class="mini-stat">
+            <span class="muted">Meta</span>
+            <strong id="goalCalories">2000 kcal</strong>
+          </div>
+          <div class="mini-stat">
+            <span class="muted">Restantes</span>
+            <strong id="remainingCalories">2000 kcal</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-actions">
+        <button class="action-card" data-tab="add">
+          <span class="icon">➕</span>
+          <span>Adicionar</span>
+        </button>
+        <button class="action-card" data-tab="stats">
+          <span class="icon">📊</span>
+          <span>Estatísticas</span>
+        </button>
+        <button class="action-card" data-tab="camera">
+          <span class="icon">📷</span>
+          <span>Foto</span>
+        </button>
+        <button class="action-card" data-tab="goal">
+          <span class="icon">🎯</span>
+          <span>Meta</span>
+        </button>
+      </section>
+
+      <section class="card active tab" id="tab-home">
+        <div class="card-title">
+          <h3>Resumo do dia</h3>
+          <button class="ghost" id="clearDay">Limpar</button>
+        </div>
+        <div class="macro-grid">
+          <div class="macro-card">
+            <span>Refeições</span>
+            <strong id="mealCount">0</strong>
+          </div>
+          <div class="macro-card">
+            <span>Média</span>
+            <strong id="avgCalories">0 kcal</strong>
+          </div>
+          <div class="macro-card">
+            <span>Maior</span>
+            <strong id="maxCalories">0 kcal</strong>
+          </div>
+        </div>
+        <ul class="meal-list" id="mealList"></ul>
+        <p class="empty" id="emptyMeals">Nenhum alimento registrado ainda.</p>
+      </section>
+
+      <section class="card tab" id="tab-add">
+        <h3>Adicionar alimento</h3>
+        <label>Escolha da base</label>
+        <select id="presetFood"></select>
+        <label>Nome</label>
+        <input id="foodName" placeholder="Ex.: Frango grelhado">
+        <label>Calorias</label>
+        <input id="foodCalories" type="number" placeholder="Ex.: 165">
+        <button class="primary" id="saveFood">Salvar alimento</button>
+      </section>
+
+      <section class="card tab" id="tab-stats">
+        <h3>Estatísticas</h3>
+        <div class="stats-row">
+          <div class="stat-box">
+            <span>Total</span>
+            <strong id="statsTotal">0 kcal</strong>
+          </div>
+          <div class="stat-box">
+            <span>Meta</span>
+            <strong id="statsGoal">2000 kcal</strong>
+          </div>
+        </div>
+        <div class="chart-card">
+          <canvas id="statsCanvas" width="320" height="140"></canvas>
+        </div>
+        <p class="muted">Gráfico simples offline do consumo do dia.</p>
+      </section>
+
+      <section class="card tab" id="tab-camera">
+        <h3>Foto do prato</h3>
+        <div class="camera-box">
+          <input type="file" accept="image/*" capture="environment">
+          <p>Estrutura pronta para futura IA de reconhecimento de alimentos.</p>
+        </div>
+      </section>
+
+      <section class="card tab" id="tab-goal">
+        <h3>Meta diária</h3>
+        <label>Defina sua meta em calorias</label>
+        <input id="goalInput" type="number" placeholder="Ex.: 2000">
+        <button class="primary" id="saveGoal">Salvar meta</button>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-home="1">Início</button>
+      <button class="nav-btn" data-tab="add">Adicionar</button>
+      <button class="nav-btn" data-tab="stats">Gráfico</button>
+      <button class="nav-btn" data-tab="goal">Meta</button>
+    </nav>
+  </div>
+
+  <script src="foods.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
